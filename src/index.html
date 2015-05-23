@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="styles/main.less" media="screen" rel="stylesheet/less" type="text/css">
+    <script src="lib/jquery/jquery-2.1.4.min.js"></script>
+
+    <!-- ES6-related imports -->
+    <script src="lib/traceur-runtime.js"></script>
+    <script src="lib/es6-module-loader-sans-promises.src.js"></script>
+    <script src="lib/extension-register.js"></script>
+    <script>
+        register(System);
+    </script>
+    <script src="lib/Reflect.js"></script>
+
+    <!-- Angular2-related imports -->
+    <script src="lib/zone.js"></script>
+    <script src="lib/long-stack-trace-zone.js"></script>
+    <script src="lib/angular2.js"></script>
+
+
+    <script src="lib/highlighter/shCore.js"></script>
+    <script src="lib/highlighter/shBrushJScript.js"></script>
+    <script src="lib/highlighter/shBrushXml.js"></script>
+    <script src="lib/less/less-2.5.1.js"></script>
+</head>
+<body>
+    <tuto>Loading...</tuto>
+    <app>Loading...</app>
+</body>
+
+<!-- Application bootstrap logic -->
+<script>
+    System.import('tuto/tuto').catch(console.log.bind(console));
+    System.import('app/app').catch(console.log.bind(console));
+</script>
+
+</html>

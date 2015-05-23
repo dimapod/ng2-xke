@@ -1,0 +1,126 @@
+@tutoWidth: 50%;
+@myPink : #c90a0a;
+@myComplementaryPink: #FFFF00;
+@myComplementaryPinkDark: #FF9900;
+@myBlue: #5CE;
+
+.border-radius (@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+
+tuto {
+  min-height: 100%;
+  margin-left: 0px;
+  box-shadow: 5px 0px 5px gray;
+  font-family: 'IM Fell French Canon', serif;
+  font-style: italic;
+  background: url("/img/tutorial-bg.jpg");
+  z-index: 10;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  overflow: auto;
+  height: 100%;
+  width: @tutoWidth;
+
+  .header {
+    margin-left: 10px;
+    margin-top: 10px;
+
+    img {
+      width: 70px;
+    }
+
+    h2 {
+      padding-left: 10px;
+      display: inline;
+      font-size: 50px;
+      text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+    }
+  }
+
+  .steps {
+
+    position: relative;
+
+    bottom: 0px;
+
+    .step {
+      font-size: 18px;
+      padding-left: 40px;
+      padding-top: 5px;
+      padding-bottom: 25px;
+      color: #bfbfbf;
+
+      .picto {
+        /*background: url(/img/picto.png) no-repeat 0px 0px;*/
+        width: 14px;
+        height: 14px;
+        background-color: @myPink;
+        display: block;
+        margin-left: -15px;
+        margin-top: -17px;
+        .border-radius(14px);
+      }
+
+      &.is-active {
+        color: #000000;
+      }
+      .step-title {
+        font-size: 22px;
+        font-weight: bold;
+        padding-left: 10px;
+        cursor: pointer;
+        &:hover {
+          color: #5f5f5f;
+        }
+      }
+      .step-detail {
+        font-family: 'Helvetica Neue';
+        font-size: 15px;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-right: 5px;
+
+      }
+      .vline {
+        width: 1px;
+        position: absolute;
+        left: 40px;
+        border-left: 4px solid @myPink;
+        z-index: 0;
+        &.a {
+          top: -1px;
+          bottom: 50%;
+        }
+        &.b {
+          top: 50%;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  .solHidden {
+    display: none;
+  }
+
+}
+
+
+app {
+  display: inline-block;
+  color: @myPink;
+  margin-left: @tutoWidth;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 100% - @tutoWidth - 6%;
+}
